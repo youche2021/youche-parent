@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
-@ConfigurationProperties("kailo.swagger")
+@ConfigurationProperties("youche.swagger")
 public class YoucheSwaggerProperties {
 
     private String title;

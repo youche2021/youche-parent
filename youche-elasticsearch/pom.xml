@@ -11,7 +11,7 @@
 
     <artifactId>youche-elasticsearch</artifactId>
     <version>1.0.0</version>
-    <name>kailo-elasticsearch</name>
+    <name>youche-elasticsearch</name>
     <description>Elasticsearch</description>
 
 
