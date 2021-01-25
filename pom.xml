@@ -13,6 +13,18 @@
         <module>youche-elasticsearch</module>
         <module>youche-elasticsearch-bboss</module>
         <module>youche-elasticsearch-sql</module>
+        <module>youche-flyway</module>
+        <module>youche-hbase</module>
+        <module>youche-influxdb</module>
+        <module>youche-kafka</module>
+        <module>youche-mongodb</module>
+        <module>youche-redis</module>
+        <module>youche-rocketmq</module>
+        <module>youche-shardingspherejdbc</module>
+        <module>youche-shardingsphereproxy</module>
+        <module>youche-swagger</module>
+        <module>youche-tidb</module>
+        <module>youche-xxljob</module>
     </modules>
     <packaging>pom</packaging>
 
