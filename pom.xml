@@ -10,6 +10,7 @@
     <modules>
         <module>youche-utils</module>
         <module>youche-swagger-spring-boot-starter</module>
+        <module>youche-elasticsearch</module>
     </modules>
     <packaging>pom</packaging>
 
