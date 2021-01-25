@@ -11,7 +11,8 @@
         <module>youche-utils</module>
         <module>youche-swagger-spring-boot-starter</module>
         <module>youche-elasticsearch</module>
-        <module>kailo-elasticsearch-bboss</module>
+        <module>youche-elasticsearch-bboss</module>
+        <module>youche-elasticsearch-sql</module>
     </modules>
     <packaging>pom</packaging>
 
