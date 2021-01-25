@@ -9,6 +9,7 @@
     <version>1.0.0</version>
     <modules>
         <module>youche-utils</module>
+        <module>youche-swagger-spring-boot-starter</module>
     </modules>
     <packaging>pom</packaging>
 
