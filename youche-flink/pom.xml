@@ -9,27 +9,37 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>youche-utils</artifactId>
+    <artifactId>youche-flink</artifactId>
+    <version>1.0.0</version>
+    <name>kailo-flyway</name>
+    <description>Flyway</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <hutool.version>5.5.7</hutool.version>
+        <flink-streaming-java.version>1.12.1</flink-streaming-java.version>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>${hutool.version}</version>
+            <groupId>com.youche</groupId>
+            <artifactId>youche-utils</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>30.1-jre</version>
+            <groupId>com.youche</groupId>
+            <artifactId>youche-swagger-spring-boot-starter</artifactId>
+            <version>1.0.0</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java_2.12</artifactId>
+            <version>${flink-streaming-java.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -37,6 +47,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -49,4 +67,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

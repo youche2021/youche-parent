@@ -25,6 +25,7 @@
         <module>youche-swagger</module>
         <module>youche-tidb</module>
         <module>youche-xxljob</module>
+        <module>youche-flink</module>
     </modules>
     <packaging>pom</packaging>
 
