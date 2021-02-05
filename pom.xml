@@ -26,6 +26,10 @@
         <module>youche-tidb</module>
         <module>youche-xxljob</module>
         <module>youche-flink</module>
+        <module>youche-flink-job</module>
+        <module>youche-webserver-extra-spring-boot-starter</module>
+        <module>youche-tomcat-extra-spring-boot-starter</module>
+        <module>youche-undertow-extra-spring-boot-starter</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -109,6 +113,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <dependency>

@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  http2:
+    enabled: true
+  undertow:
+    threads:
+      io: 16
+      worker: 256
+    buffer-size: 1024
+    direct-buffers: true
+  shutdown: graceful # 优雅关机，IMMEDIATE 是立即停止 https://zhuanlan.zhihu.com/p/143469078
+
+# 中文只能用在 yaml 下，springboot默认用unicode方式读properties
+kailo:
+  swagger:
+    title: Flink SpringBoot Project
+    description: 内容
+    version: 1.0.0
+
+spring:
+  main:
+    lazy-initialization: false
+  jmx:
+    enabled: false
+  kafka:
+    bootstrap-servers: inner-test-host:9092
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: group_user
+  lifecycle:
+    timeout-per-shutdown-phase: 30s # 关闭容器时，最大等待时间
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
