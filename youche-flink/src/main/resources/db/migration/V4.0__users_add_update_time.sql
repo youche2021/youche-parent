@@ -1,0 +1,1 @@
+alter table t_base_user add column update_time DATETIME default null;

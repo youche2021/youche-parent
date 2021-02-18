@@ -1,0 +1,1 @@
+alter table t_base_user add column description varchar(255) default null;

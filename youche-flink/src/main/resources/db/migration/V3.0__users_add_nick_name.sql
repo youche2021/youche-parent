@@ -1,0 +1,1 @@
+alter table t_base_user add column nick_name varchar(50) default null;

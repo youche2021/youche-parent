@@ -10,8 +10,17 @@ server:
     direct-buffers: true
   shutdown: graceful # 优雅关机，IMMEDIATE 是立即停止 https://zhuanlan.zhihu.com/p/143469078
 
-# 中文只能用在 yaml 下，springboot默认用unicode方式读properties
-kailo:
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
+
+# swagger 中文只能用在 yaml 下，springboot默认用unicode方式读properties
+youche:
   swagger:
     title: Flink SpringBoot Project
     description: 内容
@@ -20,8 +29,12 @@ kailo:
 spring:
   main:
     lazy-initialization: false
+    allow-bean-definition-overriding: false
   jmx:
     enabled: false
+  lifecycle:
+    timeout-per-shutdown-phase: 30s # 关闭容器时，最大等待时间
+  # kafka
   kafka:
     bootstrap-servers: inner-test-host:9092
     producer:
@@ -32,14 +45,22 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
     consumer:
       group-id: group_user
-  lifecycle:
-    timeout-per-shutdown-phase: 30s # 关闭容器时，最大等待时间
+  # 连接数据库
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://inner-test-host:3308/shardingjdbc?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=GMT%2B8
+    username: base_sa
+    password: base_sa
 
-management:
-  endpoint:
-    shutdown:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: shutdown
+# mybatis-plus
+mybatis-plus:
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      table-underline: true
+      db-type: mysql
+      logic-delete-value: 1
+      logic-not-delete-value: 0
